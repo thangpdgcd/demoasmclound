@@ -1,4 +1,5 @@
 var Userdb = require('../model/model');
+const { route } = require('../routes/router');
 const express =
     exports.create = (req, res) => {
         if (!req.body) {
@@ -81,7 +82,7 @@ exports.delete = (req, res) => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Udate user with${id}.Maybe user not found` })
             } else {
-                res.send(data)
+                res.redirect("/")
             }
         })
         .catch(err => {

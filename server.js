@@ -7,9 +7,8 @@ const connection_string = process.env.CONNECTION_STRING
 const http = require('http');
 const connectDB = require('./server/database/connection');
 const { any } = require('joi');
-
+const Users = require("./server/model/model")
 const app = express();
-
 dotenv.config({ path: 'config.env' })
 
 const PORT = process.env.PORT || 8080
